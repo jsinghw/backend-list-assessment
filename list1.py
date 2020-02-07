@@ -25,8 +25,7 @@
 
 
 def match_ends(words):
-    """Your code goes here.  Edit this docstring."""
-    return
+    return(len([matched for matched in words if (len(matched)) >= 2 if matched[0] == matched[-1]]))
 
 
 # B. front_x
@@ -37,8 +36,13 @@ def match_ends(words):
 # Hint: this can be done by making 2 lists and sorting each of them
 # before combining them.
 def front_x(words):
-    """Your code goes here.  Edit this docstring."""
-    return
+    # not golf answer
+    # x_sorted = sorted([word for word in words if (word[0] == "x")])
+    # not_x_sorted = sorted([word for word in words if (word[0] != "x")])
+    # return(x_sorted + not_x_sorted)
+
+    # golf answer
+    return(sorted([word for word in words if (word[0] == "x")]) + sorted([word for word in words if (word[0] != "x")]))
 
 
 # C. sort_last
@@ -48,8 +52,10 @@ def front_x(words):
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
 def sort_last(tuples):
-    """Your code goes here.  Edit this docstring."""
-    return
+    # https://thispointer.com/python-how-to-sort-a-list-of-tuples-by-2nd-item-using-lambda-function-or-comparator/
+    # helped with understanding tuples and use of key
+    tuples.sort(key=lambda elem: elem[-1])
+    return (tuples)
 
 
 # Simple provided test() function used in main() to print
